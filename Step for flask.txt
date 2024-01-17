@@ -1,0 +1,89 @@
+Step 1: Set Up Flask Project
+Create a Virtual Environment:
+Open a terminal in PyCharm and navigate to your project directory. Create a virtual environment:
+
+bash
+Copy code
+python -m venv venv
+Activate Virtual Environment:
+Activate the virtual environment:
+
+On Windows:
+bash
+Copy code
+venv\Scripts\activate
+On Linux/Mac:
+bash
+Copy code
+source venv/bin/activate
+Install Flask:
+Install Flask in your virtual environment:
+
+bash
+Copy code
+pip install Flask
+Create Project Structure:
+Create project folders such as templates for HTML templates and static for static files.
+
+Step 2: Create Flask App
+Create app.py:
+Create a file named app.py in your project directory.
+
+python
+Copy code
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+Step 3: Create HTML Templates
+Create templates/index.html:
+Create an HTML template for the home page.
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+</head>
+<body>
+    <h1>Welcome to Task Management App</h1>
+</body>
+</html>
+Step 4: Run the Flask App
+Run Flask App:
+In the terminal, run your Flask app:
+bash
+Copy code
+python app.py
+Visit http://127.0.0.1:5000/ in your browser to see your app.
+Step 5: Extend Functionality
+Define Routes and Templates:
+Define routes for different pages and create corresponding HTML templates.
+
+Implement Task Management Features:
+Add routes and functions to handle tasks, such as displaying tasks, adding tasks, updating tasks, and deleting tasks.
+
+Use a Database (Optional):
+If you want to persist tasks, consider using a database like SQLite or SQLAlchemy.
+
+Enhance UI with CSS and JavaScript:
+Improve the user interface using CSS for styling and JavaScript for dynamic interactions.
+
+Step 6: Deploy the Flask App (Optional)
+Prepare for Deployment:
+
+Update app.run(debug=True) to app.run() in app.py.
+Consider using a production-ready web server like Gunicorn.
+Set up a production-ready database if needed.
+Deploy to a Hosting Service:
+Deploy your Flask app to a hosting service like Heroku, AWS, or DigitalOcean.
